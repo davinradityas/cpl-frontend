@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+:root {
+    --tsu-teal: #0e7a86;
+    --tsu-teal-dark: #075866;
+    --tsu-teal-soft: #e8f6f7;
+    --tsu-teal-border: #d7e7e9;
+    --tsu-yellow: #f8c21c;
+    --tsu-ink: #102a2f;
+    --tsu-bg: #f3f8f8;
+    --tsu-card-shadow: 0 12px 32px rgba(14, 122, 134, 0.08);
+    --tsu-hover-shadow: 0 16px 36px rgba(14, 122, 134, 0.13);
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+body {
+    background:
+        linear-gradient(180deg, rgba(232, 246, 247, 0.95), rgba(247, 251, 251, 0.95) 36%, #f7fbfb);
+}
+
+main h2,
+main h3 {
+    color: var(--tsu-ink);
+}
+
+main table {
+    border-color: var(--tsu-teal-border);
+}
+
+main table thead {
+    background: linear-gradient(180deg, #f7fbfb, #eef7f8);
+    color: #527176;
+}
+
+main table tbody tr {
+    transition: background 140ms ease, box-shadow 140ms ease;
+}
+
+main table tbody tr:hover {
+    background: #f7fbfb;
+}
+
+main input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+main select,
+main textarea {
+    border-color: var(--tsu-teal-border) !important;
+    background-color: rgba(255, 255, 255, 0.96);
+    outline: none;
+    transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+main input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):focus,
+main select:focus,
+main textarea:focus {
+    border-color: var(--tsu-teal) !important;
+    box-shadow: 0 0 0 3px rgba(14, 122, 134, 0.12);
+}
+
+main input[type="checkbox"] {
+    color: var(--tsu-teal);
+}
+
+.tsu-primary-button {
+    background: linear-gradient(135deg, var(--tsu-teal), var(--tsu-teal-dark));
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(14, 122, 134, 0.2);
+    transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.tsu-primary-button:hover {
+    background: linear-gradient(135deg, #0b6974, #064a55);
+    box-shadow: 0 14px 26px rgba(14, 122, 134, 0.28);
+    transform: translateY(-1px);
+}
+
+.tsu-card {
+    border: 1px solid var(--tsu-teal-border);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: var(--tsu-card-shadow);
+    transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.tsu-card:hover {
+    border-color: #c6e4e7;
+}
+
+.tsu-card-hover:hover {
+    border-color: #b7dfe3;
+    box-shadow: var(--tsu-hover-shadow);
+    transform: translateY(-1px);
+}
+
+.tsu-input {
+    border: 1px solid var(--tsu-teal-border);
+    background: rgba(255, 255, 255, 0.96);
+    outline: none;
+}
+
+.tsu-input:focus {
+    border-color: var(--tsu-teal);
+    box-shadow: 0 0 0 3px rgba(14, 122, 134, 0.12);
+}
+
+.tsu-muted-panel {
+    border: 1px solid var(--tsu-teal-border);
+    background: linear-gradient(180deg, #ffffff, #f7fbfb);
+}
+
+.tsu-section-title {
+    color: var(--tsu-ink);
+    font-weight: 800;
+}
+
+.tsu-section-subtitle {
+    color: #64748b;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+}
+
+.tsu-nav-item {
+    position: relative;
+    border: 1px solid transparent;
+    color: #475569;
+    transition: color 160ms ease, background 160ms ease, border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+.tsu-nav-item::before {
+    content: "";
+    position: absolute;
+    left: 0.55rem;
+    top: 50%;
+    width: 0.22rem;
+    height: 0;
+    border-radius: 999px;
+    background: var(--tsu-yellow);
+    transform: translateY(-50%);
+    transition: height 160ms ease;
+}
+
+.tsu-nav-item:hover {
+    border-color: var(--tsu-teal-border);
+    background: #f4fafb;
+    color: var(--tsu-teal-dark);
+    transform: translateX(2px);
+}
+
+.tsu-nav-item:hover::before,
+.tsu-nav-item-active::before {
+    height: 1.15rem;
+}
+
+.tsu-nav-item-active {
+    border-color: #b7dfe3;
+    background: linear-gradient(90deg, var(--tsu-teal-soft), #ffffff);
+    color: var(--tsu-teal-dark);
+    box-shadow: var(--tsu-card-shadow);
+}
+
+.tsu-table {
+    border-color: var(--tsu-teal-border);
+}
+
+.tsu-table thead {
+    background: linear-gradient(180deg, #f7fbfb, #eef7f8);
+    color: #527176;
+}
+
+.tsu-table tbody tr {
+    transition: background 140ms ease;
+}
+
+.tsu-table tbody tr:hover {
+    background: #f7fbfb;
+}
+
+.tsu-secondary-button {
+    border: 1px solid var(--tsu-teal-border);
+    background: #ffffff;
+    color: var(--tsu-teal-dark);
+    transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.tsu-secondary-button:hover {
+    border-color: #b7dfe3;
+    background: var(--tsu-teal-soft);
+    transform: translateY(-1px);
+}
+
+.tsu-section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: #6b7f84;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.tsu-section-label::before {
+    content: "";
+    width: 0.42rem;
+    height: 0.42rem;
+    border-radius: 999px;
+    background: var(--tsu-yellow);
+    box-shadow: 0 0 0 4px rgba(248, 194, 28, 0.16);
+}
+
+.turbo-progress-bar {
+    height: 3px;
+    background-color: var(--tsu-teal);
+}
+
+/* Sidebar Custom Scrollbar */
+aside nav {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+
+aside nav::-webkit-scrollbar {
+    width: 6px;
+}
+
+aside nav::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+aside nav::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+}
+
+aside nav::-webkit-scrollbar-thumb:hover {
+    background: var(--tsu-teal);
+}
